@@ -11,23 +11,23 @@ window.addEventListener('DOMContentLoaded', () => {
     let userAddress = null;
 
     async function connectWallet(btn) {
-        if (!window.ethereum) {
+        if (!window.robinhood chain) {
             alert('Please install MetaMask or a Web3 wallet!');
             return;
         }
         try {
-            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const accounts = await window.robinhood chain.request({ method: 'eth_requestAccounts' });
             userAddress = accounts[0];
             
             try {
-                await window.ethereum.request({
-                    method: 'wallet_switchEthereumChain',
+                await window.robinhood chain.request({
+                    method: 'wallet_switchRobinhood ChainChain',
                     params: [{ chainId: ROBINHOOD_CHAIN_ID }],
                 });
             } catch (switchError) {
                 if (switchError.code === 4902) {
-                    await window.ethereum.request({
-                        method: 'wallet_addEthereumChain',
+                    await window.robinhood chain.request({
+                        method: 'wallet_addRobinhood ChainChain',
                         params: [ROBINHOOD_CHAIN_PARAMS],
                     });
                 } else {
